@@ -1,14 +1,30 @@
 #include "listnode.h"
 
 ListNode::ListNode() {
-    data = 0;
-    next = nullptr;
+    _data = 0;
+    _next = nullptr;
 }
 
-void ListNode::insertAfter(int d)
+void ListNode::insertNext(int d)
 {
     ListNode *new_node = new ListNode(); // создаем новый узел
-    new_node->data = d; // заполняем данные узла
-    new_node->next = next; // значение поля текущего элемента
-    next = new_node; // текущий узел указывает на вновь созданный
+    new_node->_data = d; // заполняем данные узла
+    new_node->_next = _next; // значение поля текущего элемента
+    _next = new_node; // текущий узел указывает на вновь созданный
+}
+
+ListNode *ListNode::next() {
+    return _next;
+}
+
+int ListNode::data() {
+    return _data;
+}
+
+void ListNode::setNext(ListNode *node) {
+    _next = node;
+}
+
+void ListNode::setData(int d) {
+    _data = d;
 }

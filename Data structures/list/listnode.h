@@ -5,10 +5,14 @@ class ListNode
 {
 public:
     ListNode();
-    int data;
-    ListNode *next;
-
-    void insertAfter(int d);
+    void insertNext(int d);
+    ListNode* next();
+    int data();
+    void setNext(ListNode *node);
+    void setData(int d);
+private:
+    int _data;
+    ListNode *_next;
 };
 
 #endif // LISTNODE_H
